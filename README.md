@@ -1,41 +1,29 @@
-# Project Title
+# DegenToken (DGN)
+DegenToken is an ERC20-compliant token with a built-in rewards system. It allows the owner to mint tokens and users to redeem predefined rewards by burning tokens.
 
-Simple overview of use/purpose.
+## Features
+- **ERC20 Token**: Standard token functionality (transfers, balances, etc.).
+- **Burnable**: Users can burn tokens to redeem rewards.
+- **Rewards System**: Predefined rewards with associated costs in tokens.
+- **Ownership Control**: Only the owner can mint new tokens.
 
-## Description
+## Functions
+1. **`mint(address to, uint256 amount)`**  
+   - Mint new tokens to the specified address.  
+   - **Access**: Owner only.
+2. **`redeem(uint256 index)`**  
+   - Redeem a reward by burning tokens.  
+   - **Requirement**: Sufficient token balance.
+3. **`getRewards()`**  
+   - View the list of available rewards.  
+4. **`decimals()`**  
+   - Returns `0` (token operates in whole units only).
 
-An in-depth paragraph about your project and overview of use.
+## Deployment
+- **Token Name**: Degen  
+- **Token Symbol**: DGN  
+- **Decimals**: 0  
 
-## Getting Started
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+## Events
+- **`TokensMinted(address recipient, uint256 amount)`**: Emitted when tokens are minted.  
+- **`TokensRedeemed(address player, string itemName, uint256 cost)`**: Emitted when rewards are redeemed.  
